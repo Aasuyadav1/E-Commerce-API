@@ -1,5 +1,10 @@
 import express from "express";
 import cors from "cors";
+import authRouter from "./Router/authRoute";
+import bannerRouter from "./Router/bannerRoute";
+import productRouter from "./Router/productRoute";
+import cartRouter from "./Router/cartRoute";
+import orderRouter from "./Router/orderRoute";
 
 const corsOptions = {
     origin : process.env.CORS_URL,
@@ -13,9 +18,12 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.send("server is running");
-});
+app.use("/api", authRouter);
+app.use("/api", bannerRouter);
+app.use("/api", productRouter);
+app.use("/api", cartRouter);
+app.use("/api", orderRouter);
+
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
