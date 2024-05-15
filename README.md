@@ -23,6 +23,4 @@ This repository contains the backend codebase for an e-commerce web application 
 
 Contributions are welcome! Feel free to open issues or pull requests for any improvements, bug fixes, or feature requests.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
