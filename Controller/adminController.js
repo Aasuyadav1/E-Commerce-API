@@ -1,5 +1,6 @@
 import Product from "../Model/productModel";
 import Cart from "../Model/cartModel";
+import { uploadImage } from "../Conf/uploadImage";
 
 const createProduct = async ( req, res ) => {
     try {
@@ -12,7 +13,10 @@ const createProduct = async ( req, res ) => {
             })
         }
 
-        const { productName, price, description, category, image, quantity, discountRate, isTrending, isFeatured } = req.body;
+
+        const { productName, price, description, category, quantity, discountRate, isTrending, isFeatured } = req.body;
+
+        const image = await uploadImage(req.file)
 
         const product = await new Product({
             productName,
@@ -48,7 +52,9 @@ const updateProduct = async (req, res) => {
             })
         }
         
-        const { productName, price, description, category, image, quantity, discountRate, isTrending, isFeatured } = req.body;
+        const { productName, price, description, category, quantity, discountRate, isTrending, isFeatured } = req.body;
+
+        const image = await uploadImage(req.file)
 
         const product = await Product.findByIdAndUpdate(req.params.id, {
             productName,

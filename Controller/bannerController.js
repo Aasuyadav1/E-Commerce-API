@@ -1,4 +1,5 @@
 import Banner from "../Model/bannerModel";
+import { uploadImage } from "../Conf/uploadImage";
 
 const getBanner = async (req, res) => {
     try {
@@ -30,7 +31,9 @@ const addNewBanner = async (req, res) => {
             })
         }
 
-        const { image, title, link } = req.body;
+        const { title, link } = req.body;
+
+        const image = await uploadImage(req.file)
 
         const banner = await Banner.create({
             image,
@@ -93,7 +96,9 @@ const updateBanner = async (req, res) => {
         
         const id = req.params.id
 
-        const { image, title, link } = req.body;
+        const { title, link } = req.body;
+
+        const image = await uploadImage(req.file)
 
         const banner = await Banner.findByIdAndUpdate(id, {
             image,
