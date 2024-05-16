@@ -1,6 +1,6 @@
 # MERN E-Commerce Backend
 
-This repository contains the backend codebase for an e-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides the necessary server-side functionalities to support the frontend client, enabling seamless product management, user authentication, order processing, and more.
+This repository contains the backend codebase for an e-commerce web application built using the MongoDB, Express.js, Node.js. It provides the necessary server-side functionalities to support the frontend client, enabling seamless product management, user authentication, order processing, and more.
 
 ## Features
 
