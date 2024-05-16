@@ -30,10 +30,12 @@ const productSchema = new Schema({
         type: Number,
     },
     isTrending: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     isFeatured: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     reviews: [
         {

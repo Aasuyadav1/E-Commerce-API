@@ -1,4 +1,4 @@
-
+import nodemailer from "nodemailer";
 
 const verifyEmail = async (email, link) => {
     try {

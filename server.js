@@ -5,6 +5,7 @@ import bannerRouter from "./Router/bannerRoute";
 import productRouter from "./Router/productRoute";
 import cartRouter from "./Router/cartRoute";
 import orderRouter from "./Router/orderRoute";
+import adminRouter from "./Router/adminRoute"
 
 const corsOptions = {
     origin : process.env.CORS_URL,
@@ -23,6 +24,7 @@ app.use("/api", bannerRouter);
 app.use("/api", productRouter);
 app.use("/api", cartRouter);
 app.use("/api", orderRouter);
+app.use("/api", adminRouter);
 
 
 app.listen(port, () => {
