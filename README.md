@@ -4,7 +4,6 @@ This repository contains the backend codebase for an e-commerce web application 
 
 ## Features
 
-- **RESTful API Endpoints**
 - **MongoDB Integration**
 - **Express.js Middleware**
 - **Scalability and Performance**
