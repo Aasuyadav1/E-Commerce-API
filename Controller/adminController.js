@@ -1,6 +1,6 @@
-import Product from "../Model/productModel";
-import Cart from "../Model/cartModel";
-import { uploadImage } from "../Conf/uploadImage";
+import Product from "../Model/productModel.js";
+import Cart from "../Model/cartModel.js";
+import { uploadImage } from "../Conf/uploadImage.js";
 
 const createProduct = async ( req, res ) => {
     try {

@@ -1,4 +1,4 @@
-import {Schema} from "mongoose";
+import {Schema, mongoose} from "mongoose";
 
 const tokenSchema = new Schema({
     UserId : {

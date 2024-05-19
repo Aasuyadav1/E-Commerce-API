@@ -1,4 +1,4 @@
-import Product from "../Model/productModel";
+import Product from "../Model/productModel.js";
 
 
 const getAllProducts = async (req, res) => {
@@ -81,4 +81,67 @@ const getTrendingProducts = async (req, res) => {
     }
 }
 
-export { getAllProducts, getProductById, getProductsByCategory, getTrendingProducts }
+const addProductOrder = async (req, res) => {
+    try {
+        const productId = req.params.id;
+
+        if(!productId){
+            return res.status(400).json({
+                message: "Product id not provided"
+            })
+        }
+
+        const product = await Product.findById(productId);
+
+        if(!product){
+            return res.status(404).json({
+                message: "Product not found"
+            })
+        }
+
+        const { quantity } = req.body;
+
+        const newProduct = await new Product({
+            productId,
+            quantity
+        });
+
+        await newProduct.save();
+
+        if(!newProduct){
+            return res.status(400).json({
+                message: "Product not added to cart"
+            })
+        }
+
+        return res.status(201).json({
+            message: "Product buy successfully",
+            newProduct
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const cancelProductOrder = async (req, res) => {
+    try {
+        const productId = req.params.id;
+
+        const product = await Product.findByIdAndDelete(productId);     
+
+        if(!product){
+            return res.status(404).json({
+                message: "Product not found"
+            })
+        }
+
+        return res.status(200).json({
+            message: "Product canceled successfully",
+            product
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export { getAllProducts, getProductById, getProductsByCategory, getTrendingProducts, addProductOrder, cancelProductOrder }

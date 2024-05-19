@@ -1,6 +1,6 @@
-import User from "../Model/userModel";
-import Token from "../Model/tokenModel";
-import verifyEmail from "../Conf/verifyEmail";
+import User from "../Model/userModel.js";
+import Token from "../Model/tokenModel.js";
+import verifyEmail from "../Conf/verifyEmail.js";
 
 const register = async (req, res) => {
     try {

@@ -1,5 +1,5 @@
-import Banner from "../Model/bannerModel";
-import { uploadImage } from "../Conf/uploadImage";
+import Banner from "../Model/bannerModel.js";
+import { uploadImage } from "../Conf/uploadImage.js";
 
 const getBanner = async (req, res) => {
     try {

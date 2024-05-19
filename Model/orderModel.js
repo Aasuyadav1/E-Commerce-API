@@ -1,11 +1,11 @@
-import { Schema } from "mongoose";
+import { Schema, mongoose } from "mongoose";
 
 const orderSchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    products: {
+    product: {
         type: Schema.Types.ObjectId,
         ref: "Product"
     },

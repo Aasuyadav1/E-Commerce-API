@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-import authRouter from "./Router/authRoute";
-import bannerRouter from "./Router/bannerRoute";
-import productRouter from "./Router/productRoute";
-import cartRouter from "./Router/cartRoute";
-import orderRouter from "./Router/orderRoute";
-import adminRouter from "./Router/adminRoute"
+import authRouter from "./Router/authRoute.js"
+import bannerRouter from "./Router/bannerRoute.js";
+import productRouter from "./Router/productRoute.js";
+import cartRouter from "./Router/cartRoute.js";
+import orderRouter from "./Router/orderRoute.js";
+import adminRouter from "./Router/adminRoute.js"
 
 const corsOptions = {
     origin : process.env.CORS_URL,

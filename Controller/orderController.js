@@ -1,4 +1,4 @@
-import Order from "../Model/orderModel";
+import Order from "../Model/orderModel.js";
 
 const getOrderDetail = async (req, res) => {
     try {
@@ -26,7 +26,7 @@ const getOrderDetail = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-}
+} 
 
 const updateOrderStatus = async (req, res) => {
     try {
@@ -90,5 +90,7 @@ const getOrderByStatus = async (req, res) => {
         console.log(error)
     }
 }
+
+
 
 export { getOrderByStatus, updateOrderStatus, getOrderDetail }
